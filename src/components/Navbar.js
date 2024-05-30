@@ -1,15 +1,35 @@
-import React from "react";
-import {
-    Link
-} from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "./ContextReducer";
+import Badge from 'react-bootstrap/Badge'
+import Modal from "../Modal";
+import Cart from "../screens/Cart"
 
 export default function Navbar() {
+
+  const [cartView, setCartView] = useState(false);
+  const navigate = useNavigate();
+  const cart = useCart();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseOver = () => {
+      setIsHovered(true);
+  };
+
+  const handleMouseOut = () => {
+      setIsHovered(false);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    navigate('/'); // Corrected from navigator('/') to navigate('/')
+  };
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <div className="bg-black" style={{ paddingBottom: "54px"}}>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-black" >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            GoFood
+          <Link className="navbar-brand me-auto" to="/">
+            FoodMonkey
           </Link>
           <button
             className="navbar-toggler"
@@ -23,13 +43,43 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
+            <div className="navbar-nav ms-2 me-auto">
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
+            </div>
+
+            <div className="d-flex">
+              {localStorage.getItem("authToken") ? (
+                <div>
+                  <Link className="btn bg-white text-success mx-1" onClick={() => { setCartView(true) }}>
+                    My Cart <Badge pill bg="danger">{cart.length}</Badge>
+                  </Link>
+                  {cartView ? <Modal onClose={() => { setCartView(false) }}><Cart /> </Modal> : null}
+
+                  <Link className="btn bg-white text-success mx-1" to="/myorder">
+                    My Orders
+                  </Link>
+                  <button
+                    className={`btn  mx-1 ${isHovered ? ' bg-danger text-white' : 'bg-white text-success'}`}
+                    onClick={logout}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                  >
+                    LogOut
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <Link className="btn bg-white text-success mx-1" to="/login">
+                    Login
+                  </Link>
+                  <Link className="btn bg-white text-success mx-1" to="/signup">
+                    SignUp
+                  </Link>
+
+                </div>
+              )}
             </div>
           </div>
         </div>
