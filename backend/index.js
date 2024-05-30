@@ -1,16 +1,10 @@
 const express= require('express')
 const connectToDB = require('./database/db')
-const port = process.env.PORT || 3001
+const port = 3001
 const cors = require('cors')
 
 const app=express();
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors());
 connectToDB();
 
 app.get('/',(req, res)=>{
