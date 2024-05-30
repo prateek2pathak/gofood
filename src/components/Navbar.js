@@ -13,11 +13,11 @@ export default function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseOver = () => {
-      setIsHovered(true);
+    setIsHovered(true);
   };
 
   const handleMouseOut = () => {
-      setIsHovered(false);
+    setIsHovered(false);
   };
 
   const logout = () => {
@@ -25,7 +25,7 @@ export default function Navbar() {
     navigate('/'); // Corrected from navigator('/') to navigate('/')
   };
   return (
-    <div className="bg-black" style={{ paddingBottom: "54px"}}>
+    <div className="bg-black" style={{ paddingBottom: "54px" }}>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-black" >
         <div className="container-fluid">
           <Link className="navbar-brand me-auto" to="/">
@@ -52,12 +52,17 @@ export default function Navbar() {
             <div className="d-flex">
               {localStorage.getItem("authToken") ? (
                 <div>
-                  <Link className="btn bg-white text-success mx-1" onClick={() => { setCartView(true) }}>
+                  <Link id="mycart" className="btn bg-white text-success mx-1" onClick={() => {
+                    setCartView(true)
+                  }}>
                     My Cart <Badge pill bg="danger">{cart.length}</Badge>
                   </Link>
-                  {cartView ? <Modal onClose={() => { setCartView(false) }}><Cart /> </Modal> : null}
+                  {cartView ? <Modal onClose={() => {
+                    setCartView(false)
+                    navigate('/')
+                  }}><Cart /> </Modal> : null}
 
-                  <Link className="btn bg-white text-success mx-1" to="/myorder">
+                  <Link id="myorder" className="btn bg-white text-success mx-1" to="/myorder">
                     My Orders
                   </Link>
                   <button
@@ -71,10 +76,10 @@ export default function Navbar() {
                 </div>
               ) : (
                 <div>
-                  <Link className="btn bg-white text-success mx-1" to="/login">
+                  <Link id="logout" className="btn bg-white text-success mx-1" to="/login">
                     Login
                   </Link>
-                  <Link className="btn bg-white text-success mx-1" to="/signup">
+                  <Link id="signup" className="btn bg-white text-success mx-1" to="/signup">
                     SignUp
                   </Link>
 

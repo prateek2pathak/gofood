@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const databaseUrl = "mongodb://localhost:27017/gofood";
+const databaseUrl = "mongodb+srv://prateekpathak042:prateek2004@cluster0.iiynm78.mongodb.net/gofood";
 
 const connectToDB = async () => {
   try {

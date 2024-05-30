@@ -101,7 +101,7 @@ export default function Login() {
           <button type="submit" className="m-3 btn btn-success">
             Submit
           </button>
-          <Link to="/createuser" className="m-3 btn btn-danger">
+          <Link to="/signup" className="m-3 btn btn-danger">
             Not a User
           </Link>
         </form>

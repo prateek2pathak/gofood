@@ -49,3 +49,20 @@
   text-align: center;
   z-index: 10; /* Ensure the text is above the images */
 }
+
+#logout:hover{
+  background-color: #E4A11B !important;
+  color: white !important;
+}
+#signup:hover{
+  background-color: #E4A11B !important;
+  color: white !important;
+}
+#myorder:hover{
+  background-color: #E4A11B !important;
+  color: white !important;
+}
+#mycart:hover{
+  background-color: #E4A11B !important;
+  color: white !important;
+}

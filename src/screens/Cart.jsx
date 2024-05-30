@@ -1,7 +1,9 @@
 import React from "react";
 import { useCart, useDispatch } from "../components/ContextReducer";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  let navigate= useNavigate();
   let data = useCart();
   let dispatch = useDispatch();
   if (data.length === 0) {
@@ -28,6 +30,7 @@ export default function Cart() {
         })
       });
       dispatch({type:"DROP"});
+      navigate('/');
     } catch (error) {
       console.log('Error in fetching data');
     }
