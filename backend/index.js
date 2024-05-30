@@ -4,7 +4,13 @@ const port = 5000
 const cors = require('cors')
 
 const app=express();
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 connectToDB();
 
 app.get('/',(req, res)=>{
