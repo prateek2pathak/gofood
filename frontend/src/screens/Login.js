@@ -20,7 +20,7 @@ export default function Login() {
     event.preventDefault();
     try {
       // Below is used to send data to a url and give the data in json format
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch("https://foodmonkey-server.onrender.com/api/login", {
         method:"POST",
         headers:{
           'Content-Type':'application/json'

@@ -10,7 +10,7 @@ export default function Home() {
 
   const loadData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/getfooddata", {
+      const response = await fetch("https://foodmonkey-server.onrender.com/api/getfooddata", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
