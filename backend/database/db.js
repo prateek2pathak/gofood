@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-
-const databaseUrl = "mongodb+srv://prateekpathak042:prateek2004@cluster0.iiynm78.mongodb.net/gofood";
+const databaseUrl = "mongodb+srv://prateekpathak042:prateek2004@cluster0.iiynm78.mongodb.net/gofood?retryWrites=true&w=majority&appName=Cluster0";
 
 const connectToDB = async () => {
   try {
