@@ -33,7 +33,7 @@ export default function Foot() {
               </Link>
             </li>
           </ul>
-          <p className="text-center text-muted">© 2021 Company, Inc</p>
+          <p className="text-center text-muted">© 2024 Food Monkey, Inc</p>
         </footer>
       </div>
     </div>
