@@ -12,7 +12,7 @@ export default function Foot() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/" className="nav-link px-2 text-muted">
                 Features
               </Link>
@@ -31,7 +31,7 @@ export default function Foot() {
               <Link to="/" className="nav-link px-2 text-muted">
                 About
               </Link>
-            </li>
+            </li> */}
           </ul>
           <p className="text-center text-muted">© 2024 Food Monkey, Inc</p>
         </footer>
