@@ -3,7 +3,7 @@ const User = require("../model/User");
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const secretKey="dkjfhrfidfoi"
+const secretKey = "dkjfhrfidfoi"
 const router = express.Router();
 
 router.post(
@@ -64,12 +64,12 @@ router.post("/login", async (req, res) => {
     }
 
     const payload = {
-        user:{
-            id:userdata.id
-        }
+      user: {
+        id: userdata.id
+      }
     }
 
-    const jwtToken = await jwt.sign(payload,secretKey);
+    const jwtToken = jwt.sign(payload, secretKey);
 
     return res.status(200).json({
       success: true,

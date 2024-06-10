@@ -13,7 +13,7 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("https://foodmonkey-server.onrender.com/createuser", {
+      const response = await fetch("https://foodmonkey-server.onrender.com/api/createuser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
