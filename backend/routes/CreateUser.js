@@ -28,9 +28,17 @@ router.post(
         email: req.body.email,
         password: securedPassword,
       });
+      
+      const payload = {
+        user: {
+          email:userdata.email
+        }
+      }
+      const jwtToken=jwt.sign(payload,secretKey);
 
-      res.json({
+      return res.status(200).json({
         success: true,
+        jwtToken: jwtToken
       });
     } catch (error) {
       console.log(error);
@@ -65,7 +73,7 @@ router.post("/login", async (req, res) => {
 
     const payload = {
       user: {
-        id: userdata.id
+        email:userdata.email
       }
     }
 

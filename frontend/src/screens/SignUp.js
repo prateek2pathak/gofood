@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 export default function SignUp() {
+  const navigate = useNavigate();
+
   const [first, setfirst] = useState({
     name: "",
     email: "",
@@ -28,7 +31,8 @@ export default function SignUp() {
       const json = await response.json();
       if(json.success){
       console.log(json);
-      alert('Successfully registered')
+      localStorage.setItem("authToken",json.jwtToken);
+      navigate('/');
       }
       else{
         console.log(json);

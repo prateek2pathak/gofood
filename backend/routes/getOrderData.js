@@ -3,7 +3,7 @@ const Order = require("../model/Order");
 const router = express.Router();
 
 router.post('/getorderdata', async (req, res) => {
-    let email="prat2001@gmail.com";
+    let email= req.body.email;
     try {
         const data = await Order.findOne({'email':email});
         return res.send(data.orderData); // Send the data directly
