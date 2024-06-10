@@ -85,7 +85,7 @@ export default function Home() {
             <img
                 src='../../public/images/burger.jpg'
                 className="d-block w-100"
-                alt="..."
+                alt="Burger"
                 style={{ filter: "brightness(30%)" }}
             />
         </div>
@@ -96,7 +96,7 @@ export default function Home() {
             <img
                 src='../../public/images/pizza.jpg'
                 className="d-block w-100"
-                alt="..."
+                alt="Pizza"
                 style={{ filter: "brightness(30%)" }}
             />
         </div>
@@ -108,7 +108,7 @@ export default function Home() {
                 src='../../public/images/pastry.jpg'
                 className="d-block w-100"
                 style={{ filter: "brightness(30%)" }}
-                alt="..."
+                alt="Pastry"
             />
         </div>
     </div>
