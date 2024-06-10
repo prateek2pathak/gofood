@@ -83,7 +83,7 @@ export default function Home() {
                 Explore Our Tasty Burgers
             </div>
             <img
-                src="https://source.unsplash.com/random/900x700/?burger"
+                src='../../public/images/burger.jpg'
                 className="d-block w-100"
                 alt="..."
                 style={{ filter: "brightness(30%)" }}
@@ -94,7 +94,7 @@ export default function Home() {
                 Have a slice!!!!!
             </div>
             <img
-                src="https://source.unsplash.com/random/900x700/?Pizza"
+                src='../../public/images/pizza.jpg'
                 className="d-block w-100"
                 alt="..."
                 style={{ filter: "brightness(30%)" }}
@@ -105,7 +105,7 @@ export default function Home() {
                 For your sugar rush!!!
             </div>
             <img
-                src="https://source.unsplash.com/random/900x700/?Pastry"
+                src='../../public/images/pastry.jpg'
                 className="d-block w-100"
                 style={{ filter: "brightness(30%)" }}
                 alt="..."
