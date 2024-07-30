@@ -38,21 +38,21 @@ export default function Crousel() {
         </div>
         <div className="carousel-item active" style={{filter:"brightness(30%)"}}>
           <img
-            src="https://source.unsplash.com/random/900x700/?pastry"
+            src="https://img.onmanorama.com/content/dam/mm/en/food/recipe/images/2023/5/9/chocolate-pastry.jpg"
             className="d-block w-100"
             alt="..."
           />
         </div>
         <div className="carousel-item" style={{filter:"brightness(30%)"}}>
           <img
-            src="https://source.unsplash.com/random/900x700/?burger"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Celebration_Burger_%2849116811283%29.jpg"
             className="d-block w-100"
             alt="..."
           />
         </div>
         <div className="carousel-item" style={{filter:"brightness(30%)"}}>
           <img
-            src="https://source.unsplash.com/random/900x700/?pizza"
+            src="https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU="
             className="d-block w-100"
             alt="..."
           />
