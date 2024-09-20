@@ -7,7 +7,7 @@ export default function MyOrder() {
 
     const loadData = async () => {
         try {
-            let response = await fetch("https://foodmonkey-server-uoag.onrender.com/api/getorderdata", {
+            let response = await fetch("https://foodmonkey-server.onrender.com/api/getorderdata", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

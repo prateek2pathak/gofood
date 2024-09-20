@@ -18,7 +18,7 @@ export default function Cart() {
     try {
       let userEmail = localStorage.getItem("userEmail");
       console.log(userEmail);
-      await fetch("https://foodmonkey-server-uoag.onrender.com/api/checkout", {
+      await fetch("https://foodmonkey-server.onrender.com/api/checkout", {
         method: "POST",
         headers:{
           'Content-Type':'application/json'
